@@ -39,7 +39,7 @@ export default function Textfield(prop) {
           <textarea
             className="form-control my-4"
             id="exampleFormControlTextarea1"
-            rows="8"
+            rows="12"
             placeholder="enter your text here"
             value={text}
             onChange={onChangeTextArea}

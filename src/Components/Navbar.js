@@ -3,6 +3,7 @@ import logo from "../../public/logo.png";
 import PropTypes from "prop-types";
 
 export default function Navbar(props) {
+
   return (
     <div>
       {/* <div className="App-header">
@@ -31,7 +32,7 @@ export default function Navbar(props) {
           </p>
         </div>*/}
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark my-4">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid" >
           <a className="navbar-brand" href="/">
             <img src={logo} alt="" /> {props.title}
