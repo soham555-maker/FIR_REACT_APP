@@ -3,7 +3,6 @@ import logo from "../../public/logo.png";
 import PropTypes from "prop-types";
 
 export default function Navbar(props) {
-
   return (
     <div>
       {/* <div className="App-header">
@@ -32,8 +31,8 @@ export default function Navbar(props) {
           </p>
         </div>*/}
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container-fluid" >
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="" /> {props.title}
           </a>
@@ -73,10 +72,26 @@ export default function Navbar(props) {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-primary" type="submit">
+              {/* <button className="btn btn-primary" type="submit">
                 Search
-              </button>
+              </button> */}
             </form>
+            <div className="form-check form-switch" >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                onClick={props.onHandleModeChange}
+              />
+              <label
+                className={`form-check-label text-${props.mode==="light"?"dark":"light"}`}
+                htmlFor="flexSwitchCheckDefault"
+
+              >
+                Enable {props.mode==="light"?"dark":"light"} mode.
+              </label>
+            </div>
           </div>
         </div>
       </nav>
