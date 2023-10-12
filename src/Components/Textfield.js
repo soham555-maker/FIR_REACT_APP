@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 // import copy from "../../node_modules/copy-descriptor";
 
 export default function Textfield(props) {
@@ -22,11 +22,13 @@ export default function Textfield(props) {
     // console.log("onHandleUpperCase clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UPPERCASE.", "success")
   };
   const onHandleLowerCase = () => {
     // console.log("onHandleUpperCase clicked");
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase.", "success")
   };
   const onChangeTextArea = (event) => {
     setText(event.target.value);
@@ -38,6 +40,7 @@ export default function Textfield(props) {
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
     // Alert the copied text
+    props.showAlert("Copied for text area to clipboard.", "success")
   };
   const onHandleRmvExtSpaces = () => {
     let textArr = text.split(" ");
@@ -51,9 +54,11 @@ export default function Textfield(props) {
     });
     // console.log(newText);
     setText(newText);
+    props.showAlert("Removed extra spaces.", "success")
   };
   const onHandleClear = () => {
     setText("");
+    props.showAlert("Cleared the Textarea.", "success")
   };
 
   return (
@@ -124,8 +129,8 @@ export default function Textfield(props) {
   );
 }
 
-Textfield.PropTypes = {
-  heading: PropTypes.string,
+Textfield.propTypes = {
+  heading: propTypes.string,
 };
 
 Textfield.defaultProp = {

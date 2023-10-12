@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../public/logo.png";
-import PropTypes from "prop-types";
-
+import propTypes from "prop-types";
+// import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <div>
@@ -55,13 +55,8 @@ export default function Navbar(props) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/about">
                   About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Contacts
                 </a>
               </li>
             </ul>
@@ -99,8 +94,8 @@ export default function Navbar(props) {
   );
 }
 
-Navbar.PropTypes = {
-  title: PropTypes.string.isRequired,
+Navbar.propTypes = {
+  title: propTypes.string.isRequired,
 };
 
 Navbar.defaultProps = {
