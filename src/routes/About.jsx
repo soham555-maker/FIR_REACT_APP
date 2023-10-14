@@ -1,14 +1,9 @@
 import React from "react";
 import { Form, useOutletContext } from "react-router-dom";
-// import {exp} from "./Navbar.js"
-// import PropTypes from "prop-types";
+
+
 export default function About(props) {
-  //   const exp2 = ()=>{
-  //     console.log("sucess2"
-  //   }
   const [mainStyle] = useOutletContext();
-  console.log("about"+mainStyle);
-  console.log(mainStyle);
   return (
     <div >
       <div className="accordion container" id="accordionExample" >
@@ -32,14 +27,9 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={mainStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>This is the first item's accordion body.</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestias natus provident dolore suscipit porro maxime, quisquam perspiciatis itaque ex esse quidem sint commodi deleniti, tenetur autem excepturi minus expedita.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum amet nesciunt doloribus, ullam perferendis earum a dolor ipsa atque corrupti inventore porro alias, beatae ducimus quis debitis facere voluptates saepe incidunt quasi deserunt. Quos ea unde blanditiis optio quis!<code>.accordion-body</code>,
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptas molestias, nisi facere ratione dignissimos nam quo fugit hic tempora.
             </div>
           </div>
         </div>
@@ -63,14 +53,9 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={mainStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>This is the second item's accordion body.</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestias natus provident dolore suscipit porro maxime, quisquam perspiciatis itaque ex esse quidem sint commodi deleniti, tenetur autem excepturi minus expedita.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ad tempora accusantium hic quod voluptatibus dolor ipsum ut numquam quo dolorem esse, natus molestias eos quibusdam reprehenderit! Labore molestiae totam ipsum ex, fugit cupiditate odit, assumenda nisi aspernatur pariatur eaque.<code>.accordion-body</code>,
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptas molestias, nisi facere ratione dignissimos nam quo fugit hic tempora.
             </div>
           </div>
         </div>
@@ -94,14 +79,9 @@ export default function About(props) {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={mainStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>This is the third item's accordion body.</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestias natus provident dolore suscipit porro maxime, quisquam perspiciatis itaque ex esse quidem sint commodi deleniti, tenetur autem excepturi minus expedita.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti consequuntur magnam veritatis voluptatibus sit ad in obcaecati quia dicta tempore corporis perspiciatis sapiente aut optio, deserunt dolorem fugit, accusamus nobis commodi modi laudantium exercitationem. Velit porro similique atque nisi? Dolorum?<code>.accordion-body</code>,
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio voluptas molestias, nisi facere ratione dignissimos nam quo fugit hic tempora.
             </div>
           </div>
         </div>
