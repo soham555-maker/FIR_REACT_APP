@@ -1,9 +1,21 @@
 import React, { useState } from "react";
-import propTypes from "prop-types";
-import { Form } from "react-router-dom";
-// import copy from "../../node_modules/copy-descriptor";
+import { Form, useOutletContext } from "react-router-dom";
+import Alert from "../Components/Alert";
+import "../App.css";
 
-export default function Textfield(props) {
+export default function Textfield() {
+  const [mainStyle] = useOutletContext();
+  const [alert, setAlert] = useState();
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  };
+  console.log(mainStyle, showAlert)
   const [text, setText] = useState("");
   let wordsCnt = text.split(" ").length;
   let minuts = 0;
@@ -23,13 +35,13 @@ export default function Textfield(props) {
     // console.log("onHandleUpperCase clicked");
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert("Converted to UPPERCASE.", "success")
+    showAlert("Converted to UPPERCASE.", "success")
   };
   const onHandleLowerCase = () => {
     // console.log("onHandleUpperCase clicked");
     let newText = text.toLowerCase();
     setText(newText);
-    props.showAlert("Converted to lowercase.", "success")
+    showAlert("Converted to lowercase.", "success")
   };
   const onChangeTextArea = (event) => {
     setText(event.target.value);
@@ -41,7 +53,7 @@ export default function Textfield(props) {
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
     // Alert the copied text
-    props.showAlert("Copied for text area to clipboard.", "success")
+    showAlert("Copied for text area to clipboard.", "success")
   };
   const onHandleRmvExtSpaces = () => {
     let textArr = text.split(" ");
@@ -50,22 +62,20 @@ export default function Textfield(props) {
       if (element !== "") {
         newText = newText + element + " ";
       }
-      // console.log(element)
-      // newText += element + " ";
     });
-    // console.log(newText);
     setText(newText);
-    props.showAlert("Removed extra spaces.", "success")
+    showAlert("Removed extra spaces.", "success")
   };
   const onHandleClear = () => {
     setText("");
-    props.showAlert("Cleared the Textarea.", "success")
+    showAlert("Cleared the Textarea.", "success")
   };
 
   return (
     <div>
-      <div className="container my-3 my-2" style={props.mainStyle}>
-        <h1>{props.heading}</h1>
+      <Alert alertMsg={alert} />
+      <div className="container my-3 my-2" style={mainStyle}>
+        <h1>Enter the text to be Transformed</h1>
         <div className="mb-0">
           <textarea
             className="form-control my-4"
@@ -74,7 +84,7 @@ export default function Textfield(props) {
             placeholder="enter your text here"
             value={text}
             onChange={onChangeTextArea}
-            style={props.mainStyle}
+            style={mainStyle}
           ></textarea>
         </div>
         <div>
@@ -115,7 +125,7 @@ export default function Textfield(props) {
           </button>
         </div>
       </div>
-      <div className="container my-1" style={props.mainStyle}>
+      <div className="container my-1" style={mainStyle}>
         <h2>Your text summary</h2>
         <p>
           The above text has {wordsCnt} words and {text.length} characters.
@@ -129,11 +139,3 @@ export default function Textfield(props) {
     </div>
   );
 }
-
-Textfield.propTypes = {
-  heading: propTypes.string,
-};
-
-Textfield.defaultProp = {
-  heading: "Enter the text",
-};

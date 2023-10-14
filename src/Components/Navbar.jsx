@@ -6,32 +6,6 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <div>
-      {/* <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.<br></br>
-          This is the edited <code>src/App.js</code>.
-        </p> */}
-
-      {/* <nav>
-          <ul>
-            <li><img src={logo} alt="" /></li>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-        <div className="container">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugiat autem sunt eLink corporis odio asperiores earum fugLink necessitatibus aut.
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam eveniet consequatur aspernatur doloribus perferendis, dolorem commodi! Numquam saepe ducimus est esse dolorem? Cumque sequi explicabo rem quod, recusandae earum quasi. Harum, hic illum accusantium nisi dolorum commodi eligendi quisquam eLink earum explicabo optio reiciendis, laudantium exercitationem minus temporibus placeat quis?
-          </p>
-        </div>*/}
-
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">

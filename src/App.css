@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 } */
+
+
+#myInput::placeholder {
+  /* rest remains same */
+  /* color: var(--check-secondary);   */
+  color: grey;
+}
