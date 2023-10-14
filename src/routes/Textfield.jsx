@@ -15,7 +15,7 @@ export default function Textfield() {
       setAlert(null);
     }, 1500);
   };
-  console.log(mainStyle, showAlert)
+
   const [text, setText] = useState("");
   let wordsCnt = text.split(" ").length;
   let minuts = 0;
@@ -35,13 +35,13 @@ export default function Textfield() {
     // console.log("onHandleUpperCase clicked");
     let newText = text.toUpperCase();
     setText(newText);
-    showAlert("Converted to UPPERCASE.", "success")
+    showAlert("Converted to UPPERCASE.", "success");
   };
   const onHandleLowerCase = () => {
     // console.log("onHandleUpperCase clicked");
     let newText = text.toLowerCase();
     setText(newText);
-    showAlert("Converted to lowercase.", "success")
+    showAlert("Converted to lowercase.", "success");
   };
   const onChangeTextArea = (event) => {
     setText(event.target.value);
@@ -53,7 +53,7 @@ export default function Textfield() {
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
     // Alert the copied text
-    showAlert("Copied for text area to clipboard.", "success")
+    showAlert("Copied for text area to clipboard.", "success");
   };
   const onHandleRmvExtSpaces = () => {
     let textArr = text.split(" ");
@@ -64,11 +64,11 @@ export default function Textfield() {
       }
     });
     setText(newText);
-    showAlert("Removed extra spaces.", "success")
+    showAlert("Removed extra spaces.", "success");
   };
   const onHandleClear = () => {
     setText("");
-    showAlert("Cleared the Textarea.", "success")
+    showAlert("Cleared the Textarea.", "success");
   };
 
   return (
@@ -134,7 +134,11 @@ export default function Textfield() {
           to read.
         </p>
         <h2>Preview</h2>
-        <p>{text.length>0?text.slice(0 | {minCnt}):`Enter your Text above to preview it here`}</p>
+        <p>
+          {text.length > 0
+            ? text.slice(0 | { minCnt })
+            : `Enter your Text above to preview it here`}
+        </p>
       </div>
     </div>
   );
