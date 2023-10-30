@@ -3,6 +3,7 @@ import React from "react";
 import logo from "../assets/logo.png";
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Alert from "./Alert";
 export default function Navbar(props) {
   return (
     <div>
@@ -35,6 +36,7 @@ export default function Navbar(props) {
                 </Link>
               </li>
             </ul>
+            <Alert alertMsg={props.alertMsg}/>
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
