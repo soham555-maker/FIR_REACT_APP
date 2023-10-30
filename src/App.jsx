@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 import ErrorPage from "./error-page";
 import Textfield from "./routes/Textfield";
 import About from "./routes/About";
-import Alert from "./Components/Alert";
+// import Alert from "./Components/Alert";
 import { Form, Outlet, createBrowserRouter } from "react-router-dom";
 
 
@@ -84,8 +84,9 @@ function App() {
           title="TextUtils"
           mode={mode}
           onHandleModeChange={onHandleModeChange}
+          alertMsg={alertMsg}
         />
-        <Alert alertMsg={alertMsg}/>
+        {/* <Alert alertMsg={alertMsg}/> */}
         {/* <Alert alertMsg={alertMsg} /> */}
         <div>
           <Outlet context={[mainStyle, alertMsg]}/>
